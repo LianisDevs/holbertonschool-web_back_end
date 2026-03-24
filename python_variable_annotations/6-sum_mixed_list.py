@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """This module contains sum_mixed_list function with typescripting"""
 
-from typing import List, Union
+import typing
 
 
-def sum_mixed_list(mxd_lst: List[Union[float, int]]) -> float:
+def sum_mixed_list(mxd_lst: typing.List[typing.Union[float, int]]) -> float:
     """adds list of floats together function"""
     result: float = 0
 
