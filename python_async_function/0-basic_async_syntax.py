@@ -5,7 +5,7 @@ import random
 import time
 
 
-async def wait_random(max_delay: int = 10) -> float:
+async def wait_random(max_delay=10):
     """
     generates random number
     waits random number delay
