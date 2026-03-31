@@ -2,7 +2,7 @@
 """basic async module"""
 
 import random
-import time
+import asyncio
 
 
 async def wait_random(max_delay: int = 10) -> float:
@@ -12,7 +12,7 @@ async def wait_random(max_delay: int = 10) -> float:
     returns random number
     """
     if not isinstance(max_delay, int):
-        return None
+        return
     random_num = random.uniform(0, max_delay)
-    time.sleep(random_num)
+    await asyncio.sleep(random_num)
     return random_num
