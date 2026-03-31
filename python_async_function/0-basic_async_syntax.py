@@ -2,15 +2,15 @@
 """basic async module"""
 
 import random
-import asyncio
+import time
 
 
-async def wait_random(max_delay: int = 10):
+async def wait_random(max_delay: int = 10) -> float:
     """
     generates random number
     waits random number delay
     returns random number
     """
-    random_num: float = random.random() * max_delay
-    await asyncio.sleep(random_num)
+    random_num = random.uniform(0, max_delay)
+    time.sleep(random_num)
     return random_num
