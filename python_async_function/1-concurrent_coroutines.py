@@ -16,7 +16,7 @@ async def wait_n(n: int, max_delay: int) -> list:
         return []
 
     if max_delay < 0:
-        return []
+        max_delay = 0
 
     delay_list = []
 
