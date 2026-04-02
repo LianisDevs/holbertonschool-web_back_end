@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""concurrent module"""
+"""
+concurrent module for use with wait_random module
+"""
 
 import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
