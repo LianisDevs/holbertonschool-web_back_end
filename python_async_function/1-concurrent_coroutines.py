@@ -15,7 +15,7 @@ async def wait_n(n: int, max_delay: int, /) -> List[float]:
     """
 
     if not isinstance(n, int) or not isinstance(max_delay, int):
-        return []
+        return
 
     return await asyncio.gather(*[
         asyncio.create_task(wait_random(max_delay)) for _ in range(n)])
