@@ -15,9 +15,6 @@ async def wait_n(n: int, max_delay: int, /) -> list:
             isinstance(max_delay, bool):
         return []
 
-    if max_delay < 0:
-        max_delay = 0
-
     delay_list = []
 
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
