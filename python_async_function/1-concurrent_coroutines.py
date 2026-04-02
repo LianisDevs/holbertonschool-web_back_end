@@ -13,7 +13,10 @@ async def wait_n(n: int, max_delay: int) -> list:
 
     if not isinstance(n, int) or isinstance(n, bool) or \
             isinstance(max_delay, bool):
-        return [0.0]
+        return []
+
+    if max_delay < 0:
+        return []
 
     delay_list = []
 
