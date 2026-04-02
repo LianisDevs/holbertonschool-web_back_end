@@ -5,13 +5,17 @@ import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n, max_delay):
+async def wait_n(n: int, max_delay: int) -> list:
     """
     uses async to call wait_random function n times
     returns list of random delay times in sorted list
     """
-    if not isinstance(n, int):
-        return
+
+    if not isinstance(n, int) or isinstance(n, bool):
+        return []
+
+    if not isinstance(max_delay, int) or isinstance(max_delay, bool):
+        return []
 
     delay_list = []
 
