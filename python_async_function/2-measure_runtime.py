@@ -12,6 +12,12 @@ async def measure_time(n: int, max_delay: int, /) -> float:
     measures the total_time for completing wait_n()
     divides total_time by n for average time
     """
+    if not isinstance(n, int) or not isinstance(max_delay, int):
+        return 0.0
+
+    if isinstance(n, bool) or isinstance(max_delay, bool):
+        return 0.0
+
     start_time = time.time()
 
     await wait_n(n, max_delay)
