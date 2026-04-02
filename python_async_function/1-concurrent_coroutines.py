@@ -11,15 +11,8 @@ async def wait_n(n: int, max_delay: int, /) -> list[float]:
     returns list of random delay times in sorted list
     """
 
-    if not isinstance(n, int):
+    if not isinstance(n, int) or not isinstance(max_delay, int):
         return []
 
-    delay_list = []
-
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-
-    for completed in asyncio.as_completed(tasks):
-        result = await completed
-        delay_list.append(result)
-
-    return delay_list
+    return [await completed for completed in asyncio.as_completed(tasks)]
