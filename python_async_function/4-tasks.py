@@ -20,5 +20,7 @@ async def task_wait_n(n: int, max_delay: int, /) -> List[float]:
     if isinstance(n, bool) or isinstance(max_delay, bool):
         return []
 
-    return await asyncio.gather(*[
+    result = await asyncio.gather(*[
         task_wait_random(max_delay) for _ in range(n)])
+
+    return sorted(result)
