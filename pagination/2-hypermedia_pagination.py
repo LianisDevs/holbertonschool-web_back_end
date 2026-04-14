@@ -61,9 +61,6 @@ class Server:
         Return: appropriate page of the dataset e.g correct list of rows
         """
 
-        assert (isinstance(page, int) and page > 0)
-        assert (isinstance(page_size, int) and page_size > 0)
-
         returned_data = self.get_page(page, page_size)
 
         data = self.dataset()
