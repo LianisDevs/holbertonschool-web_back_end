@@ -6,7 +6,7 @@ Contains Server Class- with methods: dataset(), index_range() and get_page()
 
 import csv
 import math
-from typing import Any, Dict, List, Tuple, TypedDict
+from typing import List, Tuple, TypedDict
 
 
 class HyperReponse(TypedDict):
