@@ -6,7 +6,7 @@ Contains Server Class- with methods: dataset(), index_range() and get_page()
 
 import csv
 import math
-from typing import Any, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 
 class Server:
@@ -55,7 +55,7 @@ class Server:
 
         return data[start:end]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict[str, Any]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """
         Parameters: page and page_size
         Return: appropriate page of the dataset e.g correct list of rows
