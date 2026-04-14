@@ -6,7 +6,16 @@ Contains Server Class- with methods: dataset(), index_range() and get_page()
 
 import csv
 import math
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Tuple, TypedDict
+
+
+class HyperReponse(TypedDict):
+    page_size: int
+    page: int
+    data: List[List]
+    next_page: int | None
+    prev_page: int | None
+    total_pages: int
 
 
 class Server:
@@ -55,7 +64,7 @@ class Server:
 
         return data[start:end]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> HyperReponse:
         """
         Parameters: page and page_size
         Return: appropriate page of the dataset e.g correct list of rows
