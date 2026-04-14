@@ -56,7 +56,7 @@ class Server:
         return data[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict[
-            str, int | List[List] | None]:
+            str, int | List | None]:
         """
         Parameters: page and page_size
         Return: appropriate page of the dataset e.g correct list of rows
