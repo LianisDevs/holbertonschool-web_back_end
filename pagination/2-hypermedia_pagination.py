@@ -60,23 +60,18 @@ class Server:
         Parameters: page and page_size
         Return: appropriate page of the dataset e.g correct list of rows
         """
+        assert (isinstance(page, int) and page > 0)
+        assert (isinstance(page_size, int) and page_size > 0)
 
         returned_data = self.get_page(page, page_size)
 
         data = self.dataset()
         data_length = len(data)
         total_pages = math.ceil(data_length / page_size)
-        start, end = self.index_range(page, page_size)
 
-        if page == 1:
-            prev_page = None
-        else:
-            prev_page = page - 1
+        prev_page = page - 1 if page > 1 else None
 
-        if end >= total_pages:
-            next_page = None
-        else:
-            next_page = page + 1
+        next_page = page + 1 if page < total_pages else None
 
         return {
             'page_size': len(returned_data),
