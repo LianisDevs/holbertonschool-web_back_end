@@ -1,0 +1,4 @@
+// insert document into collection
+db.inventory.insertOne(
+		{ name: "Holberton School"}
+		)
