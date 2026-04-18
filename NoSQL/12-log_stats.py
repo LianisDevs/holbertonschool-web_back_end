@@ -20,9 +20,7 @@ def log_details():
 
     for method in methods:
         count = collection.count_documents({"method": method})
-        print('\t', "method", method + ":", count)
-        status_count = collection.count_documents(
-            {"method": "GET", "path": "/status"})
+        print(f"\tmethod {method}: {count}")
 
     status_count = collection.count_documents({
         "method": "GET",
