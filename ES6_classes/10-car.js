@@ -10,7 +10,7 @@ export default class Car {
   }
 
   set brand(value) {
-    if (typeof value !== 'string') throw new TypeError('Brand must be a string');
+    if (typeof value !== 'string') value = 'undefined';
     this._brand = value;
   }
 
@@ -19,7 +19,7 @@ export default class Car {
   }
 
   set motor(value) {
-    if (typeof value !== 'string') throw new TypeError('Motor must be a string');
+    if (typeof value !== 'string') value = 'undefined';
     this._motor = value;
   }
 
@@ -28,11 +28,11 @@ export default class Car {
   }
 
   set color(value) {
-    if (typeof value !== 'string') throw new TypeError('Color must be a string');
+    if (typeof value !== 'string') value = 'undefined';
     this._color = value;
   }
 
   cloneCar() {
-    return new this.constructor('undefined', 'undefined', 'undefined');
+    return new this.constructor();
   }
 }
