@@ -8,5 +8,6 @@ export default function handleProfileSignup() {
         userResponse.firstName,
         userResponse.lastName,
       );
-    });
+    })
+    .catch(() => new Error('Signup system offline to the console'));
 }
