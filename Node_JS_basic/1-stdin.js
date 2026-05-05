@@ -14,5 +14,7 @@ rl.on('line', (name) => {
 });
 
 rl.on('close', () => {
-  console.log('This important software is now closing');
+  if (!process.stdin.isTTY) {
+    console.log('This important software is now closing');
+  }
 });
