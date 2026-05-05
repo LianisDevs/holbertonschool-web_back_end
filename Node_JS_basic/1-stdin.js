@@ -15,3 +15,8 @@ rl.on('line', (name) => {
 rl.on('close', () => {
   console.log('This important software is now closing');
 });
+
+process.on('SIGINT', () => {
+  console.log('This important software is now closing');
+  rl.close();
+});
