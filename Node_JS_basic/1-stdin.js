@@ -22,6 +22,9 @@ process.stdin.on('end', () => {
 });
 
 process.on('SIGINT', () => {
+  if (process.stdin.isTTY) {
+    process.stdout.write('\n');
+  }
   process.stdout.write('This important software is now closing\n');
   process.exit(0);
 });
