@@ -3,12 +3,13 @@ let input = '';
 console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('data', (data) => {
-  input += data.toString();
-
   if (process.stdin.isTTY) {
-    const name = input.trim();
-    process.stdout.write(`Your name is: ${name}\n`);
-    input = '';
+    const name = data.toString().trim();
+    if (name.length > 0) {
+      process.stdout.write(`Your name is: ${name}\r`);
+    }
+  } else {
+    input += data.toString();
   }
 });
 
