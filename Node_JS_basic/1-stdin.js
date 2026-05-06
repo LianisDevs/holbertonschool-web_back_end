@@ -7,6 +7,7 @@ process.stdin.on('data', (data) => {
     const name = data.toString().trim();
     if (name.length > 0) {
       process.stdout.write(`Your name is: ${name}\r`);
+      process.exit(0);
     }
   } else {
     input += data.toString();
@@ -22,9 +23,6 @@ process.stdin.on('end', () => {
 });
 
 process.on('SIGINT', () => {
-  if (process.stdin.isTTY) {
-    process.stdout.write('\n');
-  }
   process.stdout.write('This important software is now closing\n');
   process.exit(0);
 });
