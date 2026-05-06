@@ -7,7 +7,7 @@ process.stdin.on('data', (data) => {
 
   if (process.stdin.isTTY) {
     const name = input.trim();
-    process.stdout.write(`Your name is: ${name}\r`);
+    process.stdout.write(`Your name is: ${name}\n`);
     input = '';
   }
 });
