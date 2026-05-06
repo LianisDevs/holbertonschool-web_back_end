@@ -6,8 +6,7 @@ process.stdin.on('data', (data) => {
   if (process.stdin.isTTY) {
     const name = data.toString().trim();
     if (name.length > 0) {
-      process.stdout.write(`Your name is: ${name}\r`);
-      process.exit(0);
+      process.stdout.write(`Your name is: ${name}\r\n`);
     }
   } else {
     input += data.toString();
