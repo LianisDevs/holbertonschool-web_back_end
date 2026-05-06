@@ -16,9 +16,9 @@ process.stdin.on('data', (data) => {
 process.stdin.on('end', () => {
   if (!process.stdin.isTTY) {
     const name = input.trim();
-    console.log(`Your name is: ${name}`);
+    process.stdout.write(`Your name is: ${name}\n`);
   }
-  console.log('This important software is now closing');
+  process.stdout.write('This important software is now closing\n');
 });
 
 process.on('SIGINT', () => {
