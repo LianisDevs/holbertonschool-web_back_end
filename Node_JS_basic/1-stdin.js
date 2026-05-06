@@ -21,6 +21,7 @@ process.stdin.on('end', () => {
 });
 
 process.on('SIGINT', () => {
+  process.stdout.write('\n');
   process.stdout.write('This important software is now closing\n');
   process.exit(0);
 });
