@@ -1,27 +1,17 @@
-let input = '';
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-console.log('Welcome to Holberton School, what is your name?');
+process.stdin.setEncoding('utf8');
 
-process.stdin.on('data', (data) => {
-  input += data.toString();
-
-  if (process.stdin.isTTY) {
-    const name = input.trim();
-    if (name.length > 0) {
-      process.stdout.write(`Your name is: ${name}\r`);
-    }
-  }
-});
-
-process.stdin.on('end', () => {
+process.stdin.on('data', (input) => {
   const name = input.trim();
-  if (name.length > 0) {
-    process.stdout.write(`Your name is: ${name}\n`);
-  }
-  process.stdout.write('This important software is now closing\n');
+  console.log(`Your name is: ${name}`);
 });
 
 process.on('SIGINT', () => {
-  process.stdout.write('This important software is now closing\n');
-  process.exit(0);
+  console.log('\nThis important software is now closing');
+  process.exit();
+});
+
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
 });
