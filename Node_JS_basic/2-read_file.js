@@ -16,7 +16,8 @@ module.exports = function countStudents(filePath) {
 
       if (last === 'CS') {
         csList.push(innerArray[0]);
-      } else {
+      }
+      if (last === 'SWE') {
         sweList.push(innerArray[0]);
       }
     }
